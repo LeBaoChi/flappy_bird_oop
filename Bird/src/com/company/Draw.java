@@ -9,6 +9,7 @@ import java.io.IOException;
 
 
 public class Draw extends JPanel {
+    public boolean restart=false;
     Background bgr = new Background();
     Pipe pipe1 = new Pipe();
     Pipe pipe2 = new Pipe();
@@ -22,7 +23,7 @@ public class Draw extends JPanel {
     public int life = 0;
 
     public void init() {
-        setFocusable(true);
+
         setBackground(Color.yellow);
         setLayout(null);
 
@@ -30,21 +31,24 @@ public class Draw extends JPanel {
         pipe1.initPipe(x1);
         pipe2.initPipe(x2);
         bird.initB();
-        item.init();
+//        item.init();
 
-        thread.start();
-
+        setFocusable(true);
         addKeyListener(new KeyAdapter(){
             @Override
             public void keyPressed(KeyEvent e) {
-                bird.jump();
+                if(thread.getState()==Thread.State.NEW){
+                    thread.start();
+                }else bird.jump();
             }
 
         });
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                bird.jump();
+                if(thread.getState()==Thread.State.NEW){
+                    thread.start();
+                }else bird.jump();
             }
         });
 
@@ -150,9 +154,12 @@ public class Draw extends JPanel {
                 pipe2.update();
                 bird.move();
 //                bird.autoFit();
-
+//                System.out.println(restart);
                 if (checkCollision() == true  ) {
-                    break;
+//                    restart=true;
+                    thread.stop();
+
+//                    break;
                 }
 //                if (CheckItem() == true) {
 //                    eatItem = 0;

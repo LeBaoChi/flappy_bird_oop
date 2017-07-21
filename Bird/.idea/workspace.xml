@@ -23,7 +23,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="0">
               <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
@@ -33,31 +33,29 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+            <state relative-caret-position="144">
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Draw.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Draw.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Draw.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="156" column="30" lean-forward="true" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
+            <state relative-caret-position="210">
+              <caret line="144" column="30" lean-forward="false" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#793#1034#0" expanded="true" />
+                <element signature="e#1033#1034#0" expanded="true" />
+                <element signature="e#1062#1309#0" expanded="true" />
+                <element signature="e#1308#1309#0" expanded="true" />
+                <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+                <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+                <element signature="e#4864#5634#0" expanded="true" />
+                <element signature="e#5633#5634#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyAdapter.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/awt/event/KeyAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -87,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bird.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Bird.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Bird.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
@@ -117,6 +115,7 @@
       <find>CLip</find>
       <find>item</find>
       <find />
+      <find>thread</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -134,9 +133,9 @@
         <option value="$PROJECT_DIR$/src/com/company/Pipe.java" />
         <option value="$PROJECT_DIR$/out/production/Bird/com/company/Main.class" />
         <option value="$PROJECT_DIR$/src/com/company/Background.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Draw.java" />
         <option value="$PROJECT_DIR$/src/com/company/GUI.java" />
         <option value="$PROJECT_DIR$/src/com/company/Bird.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Draw.java" />
       </list>
     </option>
   </component>
@@ -495,12 +494,12 @@
       <workItem from="1500602826796" duration="186000" />
       <workItem from="1500612172638" duration="3309000" />
       <workItem from="1500616424366" duration="5852000" />
-      <workItem from="1500624242574" duration="606000" />
+      <workItem from="1500624242574" duration="2785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11908000" />
+    <option name="totallyTimeSpent" value="14087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -586,14 +585,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Background.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -631,6 +622,14 @@
           <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,6 +687,14 @@
           <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -745,6 +752,14 @@
           <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -802,6 +817,14 @@
           <caret line="81" column="30" lean-forward="false" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -849,6 +872,14 @@
           <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -896,6 +927,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -975,7 +1014,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="0">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
@@ -984,14 +1023,6 @@
     <entry file="file://$PROJECT_DIR$/src/image/pipe_up.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/awt/event/KeyAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Background.java">
@@ -1005,10 +1036,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Draw.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Bird.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="156" column="30" lean-forward="true" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="30" />
+        <state relative-caret-position="232">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1017,18 +1048,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+        <state relative-caret-position="144">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Bird.java">
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/awt/event/KeyAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+        <state relative-caret-position="72">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Thread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="213" column="16" lean-forward="false" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Draw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="144" column="30" lean-forward="false" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#793#1034#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1062#1309#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="method#paintComponent#0;class#Draw#0" expanded="false" />
+            <element signature="method#checkCollision#0;class#Draw#0" expanded="false" />
+            <element signature="e#4864#5634#0" expanded="true" />
+            <element signature="e#5633#5634#0" expanded="true" />
           </folding>
         </state>
       </provider>
