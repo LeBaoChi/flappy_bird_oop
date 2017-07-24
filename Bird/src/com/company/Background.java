@@ -31,24 +31,6 @@ public class Background {
 //        updateB();
     }
 
-    public void updateB() {
-        len = len % 2;
-        switch (len % 2) {
-            case 1:
-                y = y - 5;
-                if (y == 150) len++;
-                break;
-            case 0:
-                y = y + 5;
-                if (y == 450) len++;
-                break;
-        }
-    }
-
-    public void drawB(Graphics2D g) {
-        g.drawImage(imgBird, x, y, 35, 35, null);
-    }
-
     public void draw(Graphics2D g) {
         g.drawImage(imgBG, 0, 0, 600, 600, null);
         g.drawImage(imgunnderground, xImgBG, yImgBG, 600, 100, null);

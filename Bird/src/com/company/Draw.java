@@ -1,6 +1,6 @@
 package com.company;
 
-import javax.sound.sampled.*;
+//import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -20,6 +20,10 @@ public class Draw extends JPanel {
     int x2 = 600 + (600 + 70) / 2;
     int count = 0;
     int eatItem = 1;
+    SoundPlayer pointSound = new SoundPlayer();
+    SoundPlayer hitSound = new SoundPlayer();
+
+
     public int life = 0;
 
     public void init() {
@@ -56,42 +60,17 @@ public class Draw extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        Clip point_clip=null;
-        File point_sound = new File("sfx_point.wav"); //you could also get the sound file with an URL
-        try {
-            super.paintComponent(g);
-            Graphics2D g2d = (Graphics2D) g;
-            bgr.draw(g2d);
-            g.drawString("life : " + life, 20,60);
-            pipe1.draw(g2d);
-            pipe2.draw(g2d);
-            bird.draw(g2d);
-            if (bird.xBird + bird.sizeX == pipe1.x || bird.xBird + bird.sizeX == pipe2.x) {
-                AudioInputStream point_audio = AudioSystem.getAudioInputStream(point_sound);
-                DataLine.Info info_point = new DataLine.Info(Clip.class, point_audio.getFormat());
-                point_clip = (Clip)AudioSystem.getLine(info_point);
-                point_clip.open(point_audio);
-                bgr.score++;
-                point_clip.start();
-//                clip.close();
-            }
-            //ve o item
-//            if (bgr.score == 1 && eatItem == 1) {
-//                item.draw(g2d);
-//            }
-            //ve chim
-//            if (eatItem == 0) {
-//                bgr.drawB(g2d);
-//            }
-        } catch (UnsupportedAudioFileException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (LineUnavailableException e) {
-            e.printStackTrace();
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+        bgr.draw(g2d);
+        g.drawString("life : " + life, 20, 60);
+        pipe1.draw(g2d);
+        pipe2.draw(g2d);
+        bird.draw(g2d);
+        if (bird.xBird + bird.sizeX == pipe1.x || bird.xBird + bird.sizeX == pipe2.x) {
+            pointSound.play(new File("sfx_point.wav"));
+            bgr.score++;
         }
-        // Get a sound clip resource.
-
 
     }
 
@@ -116,35 +95,13 @@ public class Draw extends JPanel {
                 || birdRect.intersects(pipe2RectUp)
                 || birdRect.intersects(pipe2RectDown)
                 || birdRect.intersects(landRect)) {
-            Clip hit_clip=null;
-            File hit_sound = new File("sfx_hit.wav"); //you could also get the sound file with an URL
-            AudioInputStream hit_audio = null;
-            try {
-                hit_audio = AudioSystem.getAudioInputStream(hit_sound);
-                DataLine.Info info_hit = new DataLine.Info(Clip.class, hit_audio.getFormat());
-                hit_clip = (Clip)AudioSystem.getLine(info_hit);
-                hit_clip.open(hit_audio);
-                bgr.score++;
-                hit_clip.start();
-                return true;
-            } catch (UnsupportedAudioFileException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (LineUnavailableException e) {
-                e.printStackTrace();
-            }
+//                bgr.score++;
 
+                hitSound.play(new File("sfx_hit.wav"));
+                return true;
         }
         return false;
     }
-
-//    boolean CheckItem() {
-//        Rectangle birdRect = new Rectangle(bird.xBird, bird.yBird, bird.sizeX, bird.sizeY);
-//        Rectangle itemRec = new Rectangle(item.x, item.y, item.size, item.size);
-//        if (birdRect.intersects(itemRec)) return true;
-//        return false;
-//    }
 
     Thread thread = new Thread() {
         public void run() {
@@ -153,17 +110,21 @@ public class Draw extends JPanel {
                 pipe1.update();
                 pipe2.update();
                 bird.move();
-//                bird.autoFit();
-//                System.out.println(restart);
                 if (checkCollision() == true  ) {
-//                    restart=true;
-                    thread.stop();
+                    addKeyListener(new KeyAdapter(){
+                        @Override
+                        public void keyPressed(KeyEvent e) {
+                            int key = e.getKeyCode();
+                            if(key == e.VK_ENTER){
+                                GUI view = new GUI();
+                                view.initView();
+                                view.setVisible(true);
+                            }
+                        }
 
-//                    break;
+                    });
+                    break;
                 }
-//                if (CheckItem() == true) {
-//                    eatItem = 0;
-//                }
                 try {
                     Thread.sleep(15);
                 } catch (InterruptedException e) {

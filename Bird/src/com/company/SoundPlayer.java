@@ -6,10 +6,7 @@
 package com.company;
 
 import java.io.File;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 
 /**
  *
@@ -18,30 +15,23 @@ import javax.sound.sampled.Clip;
 public class SoundPlayer {
     
     private Clip clip;
-    
-    public SoundPlayer(File path){
+    AudioInputStream ais;
+    DataLine.Info info_wing;
+
+    public void play(File path){
         try{
-            AudioInputStream ais;
+
             ais = AudioSystem.getAudioInputStream(path);
-            AudioFormat baseFormat = ais.getFormat();
-            AudioFormat decodeFormat = new AudioFormat(
-                    AudioFormat.Encoding.PCM_SIGNED,
-                    baseFormat.getSampleRate(),
-                    16,
-                    baseFormat.getChannels(),
-                    baseFormat.getChannels()*2,
-                    baseFormat.getSampleRate(),
-                    false
-            );
-            AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
-            clip = AudioSystem.getClip();
-            clip.open(dais);
+            info_wing = new DataLine.Info(Clip.class, ais.getFormat());
+            clip = (Clip)AudioSystem.getLine(info_wing);
+            clip.open(ais);
+
         }catch(Exception e){}
-    }
-    public void play(){
         if(clip !=null){
             stop();
-            clip.setFramePosition(0);
+//            clip.setFramePosition(0);
+            clip.start();
+        }else{
             clip.start();
         }
     }
