@@ -20,10 +20,8 @@ public class Draw extends JPanel {
     int x2 = 600 + (600 + 70) / 2;
     int count = 0;
     int eatItem = 1;
-    SoundPlayer pointSound = new SoundPlayer();
-    SoundPlayer hitSound = new SoundPlayer();
-
-
+    private SoundPlayer pointSound = new SoundPlayer();
+    private SoundPlayer hitSound = new SoundPlayer();
     public int life = 0;
 
     public void init() {
@@ -41,7 +39,17 @@ public class Draw extends JPanel {
         addKeyListener(new KeyAdapter(){
             @Override
             public void keyPressed(KeyEvent e) {
-                if(thread.getState()==Thread.State.NEW){
+                int key = e.getKeyCode();
+                if(key == e.VK_V){
+                    hitSound.onSound();
+                    pointSound.onSound();
+                    bird.onSoundB();
+                }else if(key == e.VK_M){
+                    hitSound.offSound();
+                    pointSound.offSound();
+                    bird.offSoundB();
+                    System.out.println("Tat am thanh");
+                }else if(thread.getState()==Thread.State.NEW){
                     thread.start();
                 }else bird.jump();
             }
@@ -64,11 +72,15 @@ public class Draw extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         bgr.draw(g2d);
         g.drawString("life : " + life, 20, 60);
+        g.drawString("Để tắt âm thanh bấm phím 'M' ",200,200);
         pipe1.draw(g2d);
         pipe2.draw(g2d);
         bird.draw(g2d);
         if (bird.xBird + bird.sizeX == pipe1.x || bird.xBird + bird.sizeX == pipe2.x) {
-            pointSound.play(new File("sfx_point.wav"));
+            if(pointSound.isSound()){
+                pointSound.play(new File("sfx_point.wav"));
+            }
+
             bgr.score++;
         }
 
@@ -97,7 +109,10 @@ public class Draw extends JPanel {
                 || birdRect.intersects(landRect)) {
 //                bgr.score++;
 
-                hitSound.play(new File("sfx_hit.wav"));
+                if(hitSound.isSound()){
+                    hitSound.play(new File("sfx_hit.wav"));
+                }
+
                 return true;
         }
         return false;

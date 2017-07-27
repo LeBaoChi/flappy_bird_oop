@@ -34,7 +34,16 @@ public class Bird {
 
     void jump() {
             speed = -5;
-            wingSound.play(new File("sfx_wing.wav"));
+            if(wingSound.isSound()){
+                wingSound.play(new File("sfx_wing.wav"));
+            }
+
     }
 
+    public void offSoundB(){
+        wingSound.offSound();
+    }
+    public void onSoundB(){
+        wingSound.onSound();
+    }
 }

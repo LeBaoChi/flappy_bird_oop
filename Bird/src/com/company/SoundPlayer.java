@@ -17,7 +17,7 @@ public class SoundPlayer {
     private Clip clip;
     AudioInputStream ais;
     DataLine.Info info_wing;
-
+    private boolean sound=true;
     public void play(File path){
         try{
 
@@ -41,5 +41,17 @@ public class SoundPlayer {
     
     public void close(){
         clip.close();
+    }
+
+    public void offSound(){
+        sound=false;
+    }
+
+    public boolean isSound() {
+        return sound;
+    }
+
+    public void onSound(){
+        sound=true;
     }
 }
