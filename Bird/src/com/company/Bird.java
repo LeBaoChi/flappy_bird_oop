@@ -28,7 +28,7 @@ public class Bird {
     }
 
     void move() {
-            speed = speed + .3 ;
+            speed = speed + 0.3 ;
             yBird = (int) (yBird + speed);
     }
 

@@ -46,4 +46,15 @@ public class Pipe {
         g.drawImage(pipeDown, x, yDown, w, hDown, null);
     }
 
+    public void levelDiffcult(){
+        speed=6;
+    }
+    public void levelEasy(){
+        speed=3;
+    }
+
+    public void increSpped(int increment){
+        speed+=increment;
+    }
+
 }

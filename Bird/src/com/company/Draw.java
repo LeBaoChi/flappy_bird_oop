@@ -23,7 +23,7 @@ public class Draw extends JPanel {
     private SoundPlayer pointSound = new SoundPlayer();
     private SoundPlayer hitSound = new SoundPlayer();
     public int life = 0;
-
+    public String help="";
     public void init() {
 
         setBackground(Color.yellow);
@@ -40,18 +40,41 @@ public class Draw extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 int key = e.getKeyCode();
-                if(key == e.VK_V){
-                    hitSound.onSound();
-                    pointSound.onSound();
-                    bird.onSoundB();
-                }else if(key == e.VK_M){
-                    hitSound.offSound();
-                    pointSound.offSound();
-                    bird.offSoundB();
-                    System.out.println("Tat am thanh");
+                if(key == e.VK_M){
+                    if(hitSound.isSound()==true){
+                        hitSound.offSound();
+                        pointSound.offSound();
+                        bird.offSoundB();
+                        System.out.println("Tat am thanh");
+                    }else{
+                        hitSound.onSound();
+                        pointSound.onSound();
+                        bird.onSoundB();
+                        System.out.println("Bat am thanh");
+                    }
+
+                }else if(key == e.VK_H){
+                    System.out.println("Help");
+                    help="Ấn phím 'M' để tắt âm thanh \n" +
+                            "Ấn phím 'V' để bật âm thanh \n" +
+                            "Ấn phím 'D' để chọn chế độ khó \n" +
+                            "Ấn phím 'E' để chọn chế độ dễ";
+                    repaint();
+                }else
+                if(key == e.VK_D){
+                    System.out.println("Che Do Kho");
+                    pipe1.levelDiffcult();
+//                    pipe2.levelDiffcult();
+                }else if(key == e.VK_E){
+                    System.out.println("Che do De");
+                    pipe1.levelEasy();
+                    pipe2.levelEasy();
                 }else if(thread.getState()==Thread.State.NEW){
                     thread.start();
-                }else bird.jump();
+                }else {
+                    bird.jump();
+                    help="";
+                }
             }
 
         });
@@ -60,19 +83,27 @@ public class Draw extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 if(thread.getState()==Thread.State.NEW){
                     thread.start();
-                }else bird.jump();
+                    help="";
+                }else {
+                    bird.jump();
+                    help="";
+                }
             }
         });
 
     }
-
+    void drawString(Graphics g, String text, int x, int y) {
+        for (String line : text.split("\n"))
+            g.drawString(line, x, y += g.getFontMetrics().getHeight());
+    }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         bgr.draw(g2d);
         g.drawString("life : " + life, 20, 60);
-        g.drawString("Để tắt âm thanh bấm phím 'M' ",200,200);
+//        g.drawString(help,200,200);
+        drawString(g,help,200,200);
         pipe1.draw(g2d);
         pipe2.draw(g2d);
         bird.draw(g2d);
@@ -80,7 +111,10 @@ public class Draw extends JPanel {
             if(pointSound.isSound()){
                 pointSound.play(new File("sfx_point.wav"));
             }
-
+            if(bgr.score % 50 == 0 && bgr.score>1){
+                pipe1.increSpped(1);
+                pipe2.increSpped(1);
+            }
             bgr.score++;
         }
 
