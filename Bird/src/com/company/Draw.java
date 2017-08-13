@@ -9,21 +9,17 @@ import java.io.IOException;
 
 
 public class Draw extends JPanel {
-    public boolean restart=false;
     Background bgr = new Background();
     Pipe pipe1 = new Pipe();
     Pipe pipe2 = new Pipe();
     Bird bird = new Bird();
-    Item item = new Item();
-    int speed = 3;
     int x1 = 600;
-    int x2 = 600 + (600 + 70) / 2;
-    int count = 0;
-    int eatItem = 1;
+    int x2 = 600 + (600 + 70) / 2 +1;
     private SoundPlayer pointSound = new SoundPlayer();
     private SoundPlayer hitSound = new SoundPlayer();
-    public int life = 0;
-    public String help="";
+
+    private String help="";
+
     public void init() {
 
         setBackground(Color.yellow);
@@ -33,7 +29,6 @@ public class Draw extends JPanel {
         pipe1.initPipe(x1);
         pipe2.initPipe(x2);
         bird.initB();
-//        item.init();
 
         setFocusable(true);
         addKeyListener(new KeyAdapter(){
@@ -42,14 +37,10 @@ public class Draw extends JPanel {
                 int key = e.getKeyCode();
                 if(key == e.VK_M){
                     if(hitSound.isSound()==true){
-                        hitSound.offSound();
                         pointSound.offSound();
-                        bird.offSoundB();
                         System.out.println("Tat am thanh");
                     }else{
-                        hitSound.onSound();
                         pointSound.onSound();
-                        bird.onSoundB();
                         System.out.println("Bat am thanh");
                     }
 
@@ -64,7 +55,7 @@ public class Draw extends JPanel {
                 if(key == e.VK_D){
                     System.out.println("Che Do Kho");
                     pipe1.levelDiffcult();
-//                    pipe2.levelDiffcult();
+                    pipe2.levelDiffcult();
                 }else if(key == e.VK_E){
                     System.out.println("Che do De");
                     pipe1.levelEasy();
@@ -101,13 +92,20 @@ public class Draw extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         bgr.draw(g2d);
-        g.drawString("life : " + life, 20, 60);
-//        g.drawString(help,200,200);
+        g.drawString("Level : " + pipe1.getLevel(), 20, 60);
         drawString(g,help,200,200);
         pipe1.draw(g2d);
         pipe2.draw(g2d);
         bird.draw(g2d);
+        System.out.print("bird ");
+        System.out.println(bird.xBird + bird.sizeX);
+        System.out.print("pipe1 ");
+        System.out.println(pipe1.x);
+        System.out.print("pipe2 ");
+        System.out.println(pipe2.x);
+        System.out.println();
         if (bird.xBird + bird.sizeX == pipe1.x || bird.xBird + bird.sizeX == pipe2.x) {
+
             if(pointSound.isSound()){
                 pointSound.play(new File("sfx_point.wav"));
             }

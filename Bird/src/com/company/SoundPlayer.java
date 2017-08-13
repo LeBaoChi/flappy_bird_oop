@@ -10,14 +10,14 @@ import javax.sound.sampled.*;
 
 /**
  *
- * @author phamn
+ * @author thao-nt
  */
 public class SoundPlayer {
     
     private Clip clip;
     AudioInputStream ais;
     DataLine.Info info_wing;
-    private boolean sound=true;
+    private static boolean sound=true;
     public void play(File path){
         try{
 

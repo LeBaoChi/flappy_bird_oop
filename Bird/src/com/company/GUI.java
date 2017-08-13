@@ -6,7 +6,6 @@ import javax.swing.*;
 public class GUI extends JFrame{
     int width = 600;
     int height = 700;
-    Pipe pipe1,pipe2;
 
     public void initView(){
         setResizable(false);

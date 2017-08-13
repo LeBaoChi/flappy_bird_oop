@@ -12,12 +12,14 @@ public class Pipe {
     public int speed = 3;
     public Image pipeUp, pipeDown;
 
+    private String level = "Easy";
+
     int random() {
         Random rd = new Random();
-        int a = rd.nextInt(400);
-        if (a < 40) a = 40;
-        else if (a > 600-space-20) a = 600-space-20;
-        return a;
+        int h = rd.nextInt(400);
+        if (h < 40) h = 40;
+        else if (h > 600-space-20) h = 600-space-20;
+        return h;
     }
 
     void initPipe(int a) {
@@ -47,9 +49,11 @@ public class Pipe {
     }
 
     public void levelDiffcult(){
+        level="Diffcult";
         speed=6;
     }
     public void levelEasy(){
+        level="Easy";
         speed=3;
     }
 
@@ -57,4 +61,7 @@ public class Pipe {
         speed+=increment;
     }
 
+    public String getLevel() {
+        return level;
+    }
 }

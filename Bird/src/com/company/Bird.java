@@ -13,7 +13,6 @@ public class Bird {
     public int sizeX = 35;
     public int sizeY = 35;
     double speed = 0.75;
-    int v = 0;
     SoundPlayer wingSound=new SoundPlayer();
 
     public void initB() {
@@ -40,10 +39,5 @@ public class Bird {
 
     }
 
-    public void offSoundB(){
-        wingSound.offSound();
-    }
-    public void onSoundB(){
-        wingSound.onSound();
-    }
+
 }
