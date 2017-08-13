@@ -11,10 +11,38 @@ public class Pipe {
     private int x, w;
     private int speed = 3;
     private Image pipeUp, pipeDown;
-
     private String level = "Easy";
 
+    public int getyUp() {
+        return yUp;
+    }
+
+    public int gethDown() {
+        return hDown;
+    }
+
+    public int getyDown() {
+        return yDown;
+    }
+
+    public int gethUp() {
+        return hUp;
+    }
+
+    public int getW() {
+        return w;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
     int random() {
+
         Random rd = new Random();
         int h = rd.nextInt(400);
         if (h < 40) h = 40;

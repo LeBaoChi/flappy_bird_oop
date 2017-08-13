@@ -1,11 +1,9 @@
 package com.company;
 
-//import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.io.IOException;
 
 
 public class Draw extends JPanel {
@@ -13,8 +11,8 @@ public class Draw extends JPanel {
     Pipe pipe1 = new Pipe();
     Pipe pipe2 = new Pipe();
     Bird bird = new Bird();
-    private int x1 = 600;
-    private int x2 = 600 + (600 + 70) / 2 +1;
+    private int x1 = 600; // toa do ong 1
+    private int x2 = 600 + (600 + 70) / 2 +1; // toa do ong 2
     private SoundPlayer pointSound = new SoundPlayer();
     private SoundPlayer hitSound = new SoundPlayer();
 
@@ -51,8 +49,7 @@ public class Draw extends JPanel {
                             "Ấn phím 'D' để chọn chế độ khó \n" +
                             "Ấn phím 'E' để chọn chế độ dễ";
                     repaint();
-                }else
-                if(key == e.VK_D){
+                }else if(key == e.VK_D){
                     System.out.println("Che Do Kho");
                     pipe1.levelDiffcult();
                     pipe2.levelDiffcult();
@@ -84,10 +81,12 @@ public class Draw extends JPanel {
 
     }
 
+    // ham viet ra help
     public void drawString(Graphics g, String text, int x, int y) {
         for (String line : text.split("\n"))
             g.drawString(line, x, y += g.getFontMetrics().getHeight());
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -98,14 +97,7 @@ public class Draw extends JPanel {
         pipe1.draw(g2d);
         pipe2.draw(g2d);
         bird.draw(g2d);
-        System.out.print("bird ");
-        System.out.println(bird.xBird + bird.sizeX);
-        System.out.print("pipe1 ");
-        System.out.println(pipe1.x);
-        System.out.print("pipe2 ");
-        System.out.println(pipe2.x);
-        System.out.println();
-        if (bird.xBird + bird.sizeX == pipe1.x || bird.xBird + bird.sizeX == pipe2.x) {
+        if (bird.getxBird() + bird.getSizeX() == pipe1.getX() || bird.getxBird() + bird.getSizeX() == pipe2.getX()) {
 
             if(pointSound.isSound()){
                 pointSound.play(new File("sfx_point.wav"));
@@ -120,18 +112,18 @@ public class Draw extends JPanel {
     }
 
     public boolean checkCollision() {
-        Rectangle birdRect = new Rectangle(bird.xBird, bird.yBird, bird.sizeX, bird.sizeY);
-        Rectangle pipe1RectUp = new Rectangle(pipe1.x, pipe1.yUp, pipe1.w,
-                pipe1.hUp);
+        Rectangle birdRect = new Rectangle(bird.getxBird(), bird.getyBird(), bird.getSizeX(), bird.getSizeY());
+        Rectangle pipe1RectUp = new Rectangle(pipe1.getX(), pipe1.getyDown(), pipe1.getW(),
+                pipe1.gethUp());
 
-        Rectangle pipe1RectDown = new Rectangle(pipe1.x, pipe1.yDown,
-                pipe1.w, pipe1.hDown);
+        Rectangle pipe1RectDown = new Rectangle(pipe1.getX(), pipe1.getyDown(),
+                pipe1.getW(), pipe1.gethDown());
 
-        Rectangle pipe2RectDown = new Rectangle(pipe2.x, pipe2.yUp, pipe2.w,
-                pipe2.hUp);
+        Rectangle pipe2RectDown = new Rectangle(pipe2.getX(), pipe2.getyUp(), pipe2.getW(),
+                pipe2.gethUp());
 
-        Rectangle pipe2RectUp = new Rectangle(pipe2.x, pipe2.yDown,
-                pipe2.w, pipe2.hDown);
+        Rectangle pipe2RectUp = new Rectangle(pipe2.getX(), pipe2.getyDown(),
+                pipe2.getW(), pipe2.gethDown());
 
         Rectangle landRect = new Rectangle(0, 600, 600, 100);
 

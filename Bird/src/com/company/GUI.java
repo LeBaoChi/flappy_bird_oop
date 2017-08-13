@@ -5,7 +5,8 @@ import javax.swing.*;
 
 public class GUI extends JFrame{
     private int width = 600;
-     private int height = 700;
+    private int height = 700;
+    Draw draw = new Draw();
 
     public void initView(){
         setResizable(false);
@@ -13,7 +14,6 @@ public class GUI extends JFrame{
         setSize(width, height);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        Draw draw = new Draw();
         draw.init();
         add(draw);
 

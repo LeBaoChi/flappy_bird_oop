@@ -1,19 +1,35 @@
 package com.company;
 
-import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 
 public class Bird {
     private Image imgBird;
     private int xBird;
     private int yBird;
-    private int sizeX = 35;
-    private int sizeY = 35;
+    private int sizeX = 35; // kich thuoc chim theo chieu X (chieu doc)
+    private int sizeY = 35; // kich thuoc chim theo chieu Y (chieu ngang)
     private double speed = 0.75;
-     SoundPlayer wingSound=new SoundPlayer();
+
+    public int getSizeX() {
+        return sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
+    }
+
+    public int getxBird() {
+
+        return xBird;
+    }
+
+    public int getyBird() {
+        return yBird;
+    }
+
+    SoundPlayer wingSound=new SoundPlayer();
 
     public void initB() {
         xBird = 100;
