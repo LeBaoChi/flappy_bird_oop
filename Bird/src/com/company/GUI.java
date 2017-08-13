@@ -4,8 +4,8 @@ import javax.swing.*;
 
 
 public class GUI extends JFrame{
-    int width = 600;
-    int height = 700;
+    private int width = 600;
+     private int height = 700;
 
     public void initView(){
         setResizable(false);

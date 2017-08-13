@@ -5,12 +5,12 @@ import java.awt.*;
 import java.util.Random;
 
 public class Pipe {
-    public int space = 300;
-    public int yUp,  yDown;
-    public int hUp, hDown;
-    public int x, w;
-    public int speed = 3;
-    public Image pipeUp, pipeDown;
+    private int space = 300;
+    private int yUp,  yDown;
+    private int hUp, hDown;
+    private int x, w;
+    private int speed = 3;
+    private Image pipeUp, pipeDown;
 
     private String level = "Easy";
 
@@ -43,7 +43,7 @@ public class Pipe {
         }
     }
 
-    void draw(Graphics2D g) {
+    public void draw(Graphics2D g) {
         g.drawImage(pipeUp, x, yUp, w, hUp, null);
         g.drawImage(pipeDown, x, yDown, w, hDown, null);
     }

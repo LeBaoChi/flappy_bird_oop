@@ -5,21 +5,16 @@ import java.awt.*;
 
 
 public class Background {
-    Image imgUnderground;
-    Image imgBG;
-    Image imgBird;
-    public int xImgBG = 0;
-    public int yImgBG = 600;
-    int speedImgBG = 3;
+    private Image imgUnderground;
+    private Image imgBG;
+    private int xImgBG = 0;
+    private int yImgBG = 600;
+    private int speedImgBG = 3;
     public int score = 0;
-    public int x = 40;
-    public int y = 200;
-    int len = 0;
 
     public void initBG() {
         imgUnderground = new ImageIcon(getClass().getResource("/image/unnderground.png")).getImage();
         imgBG = new ImageIcon(getClass().getResource("/image/bg.png")).getImage();
-        imgBird = new ImageIcon(getClass().getResource("/image/bird.png")).getImage();
     }
 
     public void update() {

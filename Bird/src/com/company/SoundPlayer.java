@@ -15,8 +15,8 @@ import javax.sound.sampled.*;
 public class SoundPlayer {
     
     private Clip clip;
-    AudioInputStream ais;
-    DataLine.Info info_wing;
+    private AudioInputStream ais;
+    private DataLine.Info info_wing;
     private static boolean sound=true;
     public void play(File path){
         try{
@@ -39,10 +39,6 @@ public class SoundPlayer {
         if(clip.isRunning()) clip.stop();
     }
     
-    public void close(){
-        clip.close();
-    }
-
     public void offSound(){
         sound=false;
     }

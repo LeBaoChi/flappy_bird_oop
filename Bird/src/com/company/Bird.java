@@ -7,13 +7,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class Bird {
-    Image imgBird;
-    int xBird;
-    int yBird;
-    public int sizeX = 35;
-    public int sizeY = 35;
-    double speed = 0.75;
-    SoundPlayer wingSound=new SoundPlayer();
+    private Image imgBird;
+    private int xBird;
+    private int yBird;
+    private int sizeX = 35;
+    private int sizeY = 35;
+    private double speed = 0.75;
+     SoundPlayer wingSound=new SoundPlayer();
 
     public void initB() {
         xBird = 100;

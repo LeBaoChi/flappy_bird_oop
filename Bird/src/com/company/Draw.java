@@ -13,8 +13,8 @@ public class Draw extends JPanel {
     Pipe pipe1 = new Pipe();
     Pipe pipe2 = new Pipe();
     Bird bird = new Bird();
-    int x1 = 600;
-    int x2 = 600 + (600 + 70) / 2 +1;
+    private int x1 = 600;
+    private int x2 = 600 + (600 + 70) / 2 +1;
     private SoundPlayer pointSound = new SoundPlayer();
     private SoundPlayer hitSound = new SoundPlayer();
 
@@ -83,7 +83,8 @@ public class Draw extends JPanel {
         });
 
     }
-    void drawString(Graphics g, String text, int x, int y) {
+
+    public void drawString(Graphics g, String text, int x, int y) {
         for (String line : text.split("\n"))
             g.drawString(line, x, y += g.getFontMetrics().getHeight());
     }
@@ -118,7 +119,7 @@ public class Draw extends JPanel {
 
     }
 
-    boolean checkCollision() {
+    public boolean checkCollision() {
         Rectangle birdRect = new Rectangle(bird.xBird, bird.yBird, bird.sizeX, bird.sizeY);
         Rectangle pipe1RectUp = new Rectangle(pipe1.x, pipe1.yUp, pipe1.w,
                 pipe1.hUp);
